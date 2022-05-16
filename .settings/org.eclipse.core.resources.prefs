@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/main/java/conn/ConnectionUtils.java=UTF-8
+encoding//src/main/java/conn/SQLServerConnUtils_SQLJDBC.java=UTF-8
+encoding//src/main/java/filter/CookieFilter.java=UTF-8
+encoding//src/main/java/filter/JDBCFilter.java=UTF-8
+encoding//src/main/java/servlet/HomeServlet.java=UTF-8
+encoding//src/main/java/servlet/ProductListServlet.java=UTF-8
+encoding//src/main/java/utils/MyUtils.java=UTF-8
+encoding//src/main/webapp/image=UTF-8
