@@ -87,10 +87,10 @@
    		<url-pattern>/home</url-pattern>
    	</servlet-mapping>
 
-	<servlet-mapping>
+	<!-- <servlet-mapping>
 		<servlet-name>default</servlet-name>
 		<url-pattern>/public/*</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
   
   	<welcome-file-list>
   		<welcome-file>home</welcome-file>

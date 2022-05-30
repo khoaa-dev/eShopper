@@ -75,7 +75,7 @@ public class DBUtils {
 		ResultSet rs = pstm.executeQuery();
 		List<Product> list = new ArrayList<Product>();
 		while (rs.next()) {
-			Integer id = rs.getInt("id");
+			String id = rs.getString("id");
 			String nameProduct = rs.getString("nameProduct");
 			float price = rs.getFloat("price");
 			String imageProduct = rs.getString("imageProduct");
@@ -89,55 +89,57 @@ public class DBUtils {
 		return list;
 	}
 	
-	public static Product findProduct(Connection conn, Integer id) throws SQLException {
+	public static Product findProduct(Connection conn, String id) throws SQLException {
 		String sql = "Select a.id, a.nameProduct, a.price, a.imageProduct from Product a where a.id=?";
 
 		PreparedStatement pstm = conn.prepareStatement(sql);
-		pstm.setInt(1, id);
+		pstm.setString(1, id);
 
 		ResultSet rs = pstm.executeQuery();
 
 		while (rs.next()) {
+			String idProduct = rs.getString("id");
 			String nameProduct = rs.getString("nameProduct");
 			String imageProduct = rs.getString("imageProduct");
 			float price = rs.getFloat("price");
-			Product product = new Product(id, nameProduct, price, imageProduct);
+			Product product = new Product(idProduct, nameProduct, price, imageProduct);
 			return product;
 		}
 		return null;
 	}
 	
-	// public static void updateProduct(Connection conn, Product product) throws SQLException {
-	// 	String sql = "Update Product set Name =?, Price=? where Code=? ";
+	public static void updateProduct(Connection conn, Product product) throws SQLException {
+		String sql = "Update product set nameProduct =?, price=?, imageProduct=? where id=? ";
 
-	// 	PreparedStatement pstm = conn.prepareStatement(sql);
+		PreparedStatement pstm = conn.prepareStatement(sql);
 
-	// 	pstm.setString(1, product.getName());
-	// 	pstm.setFloat(2, product.getPrice());
-	// 	pstm.setString(3, product.getCode());
-	// 	pstm.executeUpdate();
-	// }
+		pstm.setString(1, product.getNameProduct());
+		pstm.setFloat(2, product.getPrice());
+		pstm.setString(3, product.getImageProduct());
+		pstm.setString(4, product.getId());
+		pstm.executeUpdate();
+	}
 	
-	// public static void insertProduct(Connection conn, Product product) throws SQLException {
-	// 	String sql = "Insert into Product(Code, Name,Price) values (?,?,?)";
+	public static void insertProduct(Connection conn, Product product) throws SQLException {
+		String sql = "Insert into Product(nameProduct, price, imageProduct) values (?,?,?)";
 
-	// 	PreparedStatement pstm = conn.prepareStatement(sql);
+		PreparedStatement pstm = conn.prepareStatement(sql);
 
-	// 	pstm.setString(1, product.getCode());
-	// 	pstm.setString(2, product.getName());
-	// 	pstm.setFloat(3, product.getPrice());
+		pstm.setString(1, product.getNameProduct());
+		pstm.setFloat(2, product.getPrice());
+		pstm.setString(3, product.getImageProduct());
 
-	// 	pstm.executeUpdate();
-	// }
+		pstm.executeUpdate();
+	}
 	
-	// public static void deleteProduct(Connection conn, String code) throws SQLException {
-	// 	String sql = "Delete From Product where Code= ?";
+	public static void deleteProduct(Connection conn, String id) throws SQLException {
+		String sql = "Delete From Product where id = ?";
 
-	// 	PreparedStatement pstm = conn.prepareStatement(sql);
+		PreparedStatement pstm = conn.prepareStatement(sql);
 
-	// 	pstm.setString(1, code);
+		pstm.setString(1, id);
 
-	// 	pstm.executeUpdate();
-	// }
+		pstm.executeUpdate();
+	}
 	
 }

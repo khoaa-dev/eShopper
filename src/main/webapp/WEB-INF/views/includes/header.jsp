@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="container-fluid">
     <div class="row bg-secondary py-2 px-xl-5">
@@ -118,10 +119,26 @@
                         <a href="${pageContext.request.contextPath}/productList" class="nav-item nav-link">Product Manager</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
-                    <div class="navbar-nav ml-auto py-0">
-                        <a href="" class="nav-item nav-link">Login</a>
-                        <a href="" class="nav-item nav-link">Register</a>
-                    </div>
+                    <c:choose >
+                        <c:when test="${sessionScope.loginedUser == null}">
+                            <div class="navbar-nav ml-auto py-0">
+                                <a href="${pageContext.request.contextPath}/login" class="nav-item nav-link">Login</a>
+                                <a href="" class="nav-item nav-link">Register</a>
+                            </div>
+                        </c:when>
+                        <c:when test="${sessionScope.loginedUser != null}">
+                            <div class="navbar-nav ml-auto py-0">
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hello ${user.userName}</a>
+                                    <div class="dropdown-menu rounded-0 m-0">
+                                        <a href="${pageContext.request.contextPath}/productList" class="dropdown-item">Product Manager</a>
+                                        <a href="checkout.html" class="dropdown-item">Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </c:when>
+                    </c:choose>
+                    
                 </div>
             </nav>
             <div id="header-carousel" class="carousel slide" data-ride="carousel">

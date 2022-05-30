@@ -43,7 +43,7 @@
                             <!-- <img class="img-fluid w-100" src="${pageContext.request.contextPath}/image/${product.imageProduct}" alt=""> -->
                             <!-- <img class="img-fluid w-100" src="../../image/product-1.jpg" alt=""> -->
                             <!-- <img src="C:/Users/nguye/eclipse-workspace/Demo/webapp/image/${product.imageProduct}" value= alt=""> -->
-                            <img class="img-fluid w-100" src="<c:url value="/resources/img/product-1.jpg" />" />
+                            <img class="img-fluid w-100" src="<c:url value="/resources/img/${product.imageProduct}" />" />
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                             <h6 class="text-truncate mb-3">${product.nameProduct}</h6>

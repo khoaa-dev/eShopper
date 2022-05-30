@@ -11,8 +11,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import beans.Product;
+import beans.UserAccount;
 import utils.DBUtils;
 import utils.MyUtils;
 
@@ -29,6 +31,9 @@ public class ProductListServlet extends HttpServlet {
 			throws ServletException, IOException {
 		Connection conn = MyUtils.getStoredConnection(request);
 
+		HttpSession session = request.getSession();
+		UserAccount user = MyUtils.getLoginedUser(session);
+
 		String errorString = null;
 		List<Product> list = null;
 		try {
@@ -40,6 +45,7 @@ public class ProductListServlet extends HttpServlet {
 		// Lưu thông tin vào request attribute trước khi forward sang views.
 		request.setAttribute("errorString", errorString);
 		request.setAttribute("productList", list);
+		request.setAttribute("user", user);
 		
 		// Forward sang /WEB-INF/views/productListView.jsp
 		RequestDispatcher dispatcher = request.getServletContext()

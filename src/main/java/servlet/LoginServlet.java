@@ -82,9 +82,10 @@ public class LoginServlet extends HttpServlet {
 			request.setAttribute("user", user);
 
 			// Forward to /WEB-INF/views/login.jsp
+			// RequestDispatcher dispatcher //
+			// 		= this.getServletContext().getRequestDispatcher("/WEB-INF/views/loginView.jsp");
 			RequestDispatcher dispatcher //
-					= this.getServletContext().getRequestDispatcher("/WEB-INF/views/loginView.jsp");
-
+			= this.getServletContext().getRequestDispatcher("/WEB-INF/views/loginView.jsp");
 			dispatcher.forward(request, response);
 		}
 		// If no error
@@ -93,6 +94,7 @@ public class LoginServlet extends HttpServlet {
 		else {
 			HttpSession session = request.getSession();
 			MyUtils.storeLoginedUser(session, user);
+			// request.setAttribute("user", user);
 
 			// If user checked "Remember me".
 			if (remember) {
@@ -103,8 +105,12 @@ public class LoginServlet extends HttpServlet {
 				MyUtils.deleteUserCookie(response);
 			}
 
+			// RequestDispatcher dispatcher 
+			// 		= this.getServletContext().getRequestDispatcher("/WEB-INF/views/homeView.jsp");
+
 			// Redirect to userInfo page.
-			response.sendRedirect(request.getContextPath() + "/userInfo");
+			// response.sendRedirect(request.getContextPath() + "/userInfo");
+			response.sendRedirect(request.getContextPath() + "/home");
 		}
 	}
 }
