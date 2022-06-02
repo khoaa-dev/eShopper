@@ -104,25 +104,16 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="shop.html" class="nav-item nav-link">Shop</a>
-                    <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="cart.html" class="dropdown-item">Shopping Cart</a>
-                            <a href="checkout.html" class="dropdown-item">Checkout</a>
-                        </div>
-                    </div>
-                    <a href="${pageContext.request.contextPath}/productList" class="nav-item nav-link">Product Manager</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="index.html" class="nav-item nav-link active">Trang chủ</a>
+                    <a href="shop.html" class="nav-item nav-link">Cửa hàng</a>
+                    <a href="detail.html" class="nav-item nav-link">Liên hệ</a>
                 </div>
                 <div class="navbar-nav ml-auto py-0">
                   <div class="nav-item dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hello ${user.userName}</a>
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Xin chào ${user.userName}</a>
                       <div class="dropdown-menu rounded-0 m-0">
-                              <a href="${pageContext.request.contextPath}/productList" class="dropdown-item">Product Manager</a>
-                              <a href="checkout.html" class="dropdown-item">Logout</a>
+                              <a href="${pageContext.request.contextPath}/productList" class="dropdown-item">Quản lý sản phẩm</a>
+                              <a href="checkout.html" class="dropdown-item">Đăng xuất</a>
                       </div>
                   </div>
                   </div>
@@ -139,7 +130,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                    <h4 class="d-flex justify-content-between"> Thêm món ăn
+                    <h4 class="d-flex justify-content-between"> THÊM SẢN PHẨM
                        <a href="" class="btn btn-primary float-end">Trở lại trang trước</a>
                     </h4>
                     </div>
@@ -159,7 +150,7 @@
                           <input type="file" name="imageProduct" id="image" class="form-control">
                           </div>
                           <div class="form-group d-flex justify-content-end">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                          <button type="button" class="btn btn-secondary mr-3" data-dismiss="modal">Hủy</button>
                           <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
                           </div>
                        </form>
@@ -169,5 +160,7 @@
         </div>
     </div>
 
+
+    <jsp:include page="./includes/footer.jsp"></jsp:include>
 </body>
 </html>

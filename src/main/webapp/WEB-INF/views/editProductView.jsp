@@ -106,25 +106,16 @@
                   </button>
                   <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                      <div class="navbar-nav mr-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="shop.html" class="nav-item nav-link">Shop</a>
-                        <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
-                        <div class="nav-item dropdown">
-                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                           <div class="dropdown-menu rounded-0 m-0">
-                              <a href="cart.html" class="dropdown-item">Shopping Cart</a>
-                              <a href="checkout.html" class="dropdown-item">Checkout</a>
-                           </div>
-                        </div>
-                        <a href="${pageContext.request.contextPath}/productList" class="nav-item nav-link">Product Manager</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="index.html" class="nav-item nav-link active">Trang chủ</a>
+                        <a href="shop.html" class="nav-item nav-link">Cửa hàng</a>
+                        <a href="detail.html" class="nav-item nav-link">Liên hệ</a>
                      </div>
                      <div class="navbar-nav ml-auto py-0">
                         <div class="nav-item dropdown">
-                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hello ${user.userName}</a>
+                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Xin chào ${user.userName}</a>
                            <div class="dropdown-menu rounded-0 m-0">
-                                 <a href="${pageContext.request.contextPath}/productList" class="dropdown-item">Product Manager</a>
-                                 <a href="checkout.html" class="dropdown-item">Logout</a>
+                                 <a href="${pageContext.request.contextPath}/productList" class="dropdown-item">Quản lý sản phẩm</a>
+                                 <a href="checkout.html" class="dropdown-item">Đăng xuất</a>
                            </div>
                         </div>
                      </div>
@@ -142,7 +133,7 @@
                <c:if test="${not empty product}">
                   <form method="POST" action="${pageContext.request.contextPath}/editProduct" enctype="multipart/form-data">
                      <div class="form-group">
-                        <label for="idProduct">Id</label>
+                        <label for="idProduct">Mã sản phẩm</label>
                         <input type="text" class="form-control" id="idProduct"  name="idProduct" value="${product.id}">
                      </div>
                      <div class="form-group">
@@ -159,7 +150,7 @@
                         <img class="mt-5" src="<c:url value="/resources/img/${product.imageProduct}" />" width="100px" height="100px" alt="">
                      </div>
                      <button type="submit" class="btn btn-primary">Cập nhật</button>
-                     <button type="submit" class="btn btn-primary">Cancel</button>
+                     <button type="submit" class="btn btn-primary">hủy</button>
                   </form>
                </c:if>
             </div>

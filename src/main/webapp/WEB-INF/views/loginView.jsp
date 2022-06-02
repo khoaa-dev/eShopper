@@ -58,7 +58,7 @@
 			<div class="col-lg-6 col-6 text-left">
 				<form action="">
 					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search for products">
+						<input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm">
 						<div class="input-group-append">
 							<span class="input-group-text bg-transparent text-primary">
 								<i class="fa fa-search"></i>
@@ -95,22 +95,13 @@
 					</button>
 					<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
 						<div class="navbar-nav mr-auto py-0">
-							<a href="index.html" class="nav-item nav-link active">Home</a>
-							<a href="shop.html" class="nav-item nav-link">Shop</a>
-							<a href="detail.html" class="nav-item nav-link">Shop Detail</a>
-							<div class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-								<div class="dropdown-menu rounded-0 m-0">
-									<a href="cart.html" class="dropdown-item">Shopping Cart</a>
-									<a href="checkout.html" class="dropdown-item">Checkout</a>
-								</div>
-							</div>
-							<a href="${pageContext.request.contextPath}/productList" class="nav-item nav-link">Product Manager</a>
-							<a href="contact.html" class="nav-item nav-link">Contact</a>
+							<a href="${pageContext.request.contextPath}/home" class="nav-item nav-link active">Trang chủ</a>
+							<a href="shop.html" class="nav-item nav-link">Cửa hàng</a>
+							<a href="detail.html" class="nav-item nav-link">Liên hệ</a>
 						</div>
 						<div class="navbar-nav ml-auto py-0">
-							<a href="${pageContext.request.contextPath}/login" class="nav-item nav-link">Login</a>
-							<a href="" class="nav-item nav-link">Register</a>
+							<a href="${pageContext.request.contextPath}/login" class="nav-item nav-link">Đăng nhập</a>
+							<a href="" class="nav-item nav-link">Đăng ký</a>
 						</div>
 					</div>
 				</nav>
@@ -135,7 +126,7 @@
 				
 				  <!-- Password input -->
 				  <div class="form-outline mb-4">
-					<label class="form-label" for="form2Example2">Password</label>
+					<label class="form-label" for="form2Example2">Mật khẩu</label>
 					<input type="text" id="form2Example2" class="form-control" 
 						 name="password" value= "${user.password}"  />
 				  </div>
@@ -147,26 +138,26 @@
 					  <div class="form-check">
 						<input class="form-check-input" type="checkbox" value="" id="form2Example31" checked 
 							name="rememberMe" value= "Y" />
-						<label class="form-check-label" for="form2Example31"> Remember me </label>
+						<label class="form-check-label" for="form2Example31"> Nhớ tài khoản </label>
 					  </div>
 					</div>
 				
 					<div class="col">
 					  <!-- Simple link -->
-					  <a href="#!">Forgot password?</a>
+					  <a href="#!">Quên mật khẩu?</a>
 					</div>
 				  </div>
 				
 				  <!-- Submit button -->
 				  <div class="row mb-4 w-100">
 					  <div class="col d-flex justify-content-center">
-						<button type="submit" class="btn btn-primary btn-block mb-4" value="Submit">Sign in</button>
+						<button type="submit" class="btn btn-primary btn-block mb-4" value="Submit">Đăng nhập</button>
 					  </div>
 				  </div>
 				
 				  <!-- Register buttons -->
 				  <div class="text-center">
-					<p>Not a member? <a href="#!">Register</a></p>
+					<p>Chưa có tài khoản? <a href="#!">Đăng ký ngay</a></p>
 				  </div>
 				</form>
 			</div>
